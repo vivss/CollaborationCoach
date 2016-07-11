@@ -1,0 +1,302 @@
+[
+	{
+		"title": "Start",
+		"tags": "Beginnings",
+		"body": "Hi Zach your conversation with Ru and Angela lasted 30 minutes\n[[Cool|TypeofConvo]]",
+		"position": {
+			"x": 22,
+			"y": -351
+		},
+		"colorID": 1
+	},
+	{
+		"title": "TypeofConvo",
+		"tags": "type",
+		"body": "What type of call was it?\n[[Business Meeting|Topic2]]\n[[Friends|Topic2]]\n[[Family|Topic2]]\n[[Company Meeting|Topic2]]",
+		"position": {
+			"x": 160,
+			"y": -86
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Topic2",
+		"tags": "topic",
+		"body": "Looking at your conversation it looks like the main topic was \"Rainbow Unicorns\" [SHOW WORD CLOUD]. \nIs that correct?\n[[Yup|TopicP]]\n[[Not quite|TopicN]]",
+		"position": {
+			"x": -126,
+			"y": 196
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TopicP",
+		"tags": "topic",
+		"body": "Nice job staying on topic!\n[[Thanks!|Participation]]\n[[I wouldn't say we stayed on topic|topicStray]]",
+		"position": {
+			"x": -233,
+			"y": 440
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TopicN",
+		"tags": "topic",
+		"body": "Oops. What was The topic or goal of the call?\n[[The subject of the call was ...Flying Potatoes|OnTopic]]\n[[The subject of the call was...Spuds|OnTopic]]",
+		"position": {
+			"x": 20,
+			"y": 445
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicStray",
+		"tags": "topic",
+		"body": " Tip on staying on topic\n[[I'll keep that in mind!||Participation]]",
+		"position": {
+			"x": -155,
+			"y": 710
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Topic",
+		"tags": "topic",
+		"body": "Glad to hear you enjoyed it! Did the call have any goal or main topic?\n[[Yes|OnTopic]]\n[[No|]]",
+		"position": {
+			"x": 208,
+			"y": 214
+		},
+		"colorID": 0
+	},
+	{
+		"title": "OnTopic",
+		"tags": "",
+		"body": "Do you think your group reached its goal?\n[[Yeah|ShowWordCloudP]]\n[[No|ShowWordCloudN]]",
+		"position": {
+			"x": 205,
+			"y": 701
+		},
+		"colorID": 0
+	},
+	{
+		"title": "ShowWordCloudP",
+		"tags": "",
+		"body": "Awesome! Here's the word cloud from your convesation\n[[Neat|Participation]]",
+		"position": {
+			"x": 6,
+			"y": 1000
+		},
+		"colorID": 0
+	},
+	{
+		"title": "ShowWordCloudN",
+		"tags": "",
+		"body": "Hmmm, we can definitely improve on that. Here's the word cloud from your conversation\n[[Cool|Participation]]",
+		"position": {
+			"x": 112,
+			"y": 1304
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TopicTip",
+		"tags": "topic",
+		"body": "Before a meeting it's helpful to create an agenda. This ensures everyone is aware of what needs to be covered\n[[Neat|TopictoParticipation]]",
+		"position": {
+			"x": 948,
+			"y": 679
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TopictoParticipation",
+		"tags": "participation",
+		"body": "Do you want to talk about your participation?\n[[Yes|Participation]]\n[[nah|participation]]",
+		"position": {
+			"x": 724,
+			"y": 1103
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Neutral1",
+		"tags": "smile",
+		"body": "Let's look at your smile intensity during the call",
+		"position": {
+			"x": 554,
+			"y": -270
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GroupMood2",
+		"tags": "Engaged",
+		"body": "Everyone was pretty engaged in that conversation\n[[Yeah it was an interesting call|Topic]]\n[[That's one way of looking at it|Topic]]",
+		"position": {
+			"x": -132,
+			"y": -73
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Participation",
+		"tags": "participation",
+		"body": "Okay let's move on and look at your participation\n[[Okay|GoodParticipation]]\n[[Okay (negative)|LessParticipation]]",
+		"position": {
+			"x": -481,
+			"y": 724
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GoodParticipation",
+		"tags": "participationType",
+		"body": "You participated the most of everyone in the group! [SHOW PARTICIPATION CHART]\nTeam management experts have found that having equal participation from team members is a sign of a healthy team. Do you think anyone in your team could contribute more?\n[[Yes|LessPartP]]\n[[No|LessPartN]]",
+		"position": {
+			"x": -271,
+			"y": 1007
+		},
+		"colorID": 0
+	},
+	{
+		"title": "EqualParticipation",
+		"tags": "participationType",
+		"body": "You participated about the same as everyone else. [SHOW PARTICIPATION CHART]\nExperts on team management say that having equal contributions from everyone is a sign of a good team!\n[[Neat|ParticipationTip]]",
+		"position": {
+			"x": -271,
+			"y": 1007
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LessParticipation",
+		"tags": "participationType",
+		"body": "You participated the least of everyone in the group. [SHOW PARTICIPATION CHART] \nTeam management experts have found that having equal participation from team members is a sign of a healthy team. Do you think you could contribute more to the conversation? \n[[Yes|MorePartP]]\n[[No|MorePartN]]",
+		"position": {
+			"x": -271,
+			"y": 1007
+		},
+		"colorID": 0
+	},
+	{
+		"title": "MorePartP",
+		"tags": "participation",
+		"body": "Okay! We'll add this to your goals for next time. \n[[Thanks!|TRANSITION]]",
+		"position": {
+			"x": -271,
+			"y": 1007
+		},
+		"colorID": 0
+	},
+	{
+		"title": "MorePartN",
+		"tags": "participation",
+		"body": "Okay, just keep it in mind \n[[Okay|]TRANSITION]",
+		"position": {
+			"x": -271,
+			"y": 1007
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LessPartP",
+		"tags": "participation",
+		"body": "Something about paying attention to when others want to speak and adding to journal reminders\n[[Thanks!|TRANSITION]]",
+		"position": {
+			"x": -543,
+			"y": 1217
+		},
+		"colorID": 0
+	},
+	{
+		"title": "LessPartN",
+		"tags": "participation",
+		"body": "Okay, just keep it in mind \n[[Okay|TRANSITION]]",
+		"position": {
+			"x": -307,
+			"y": 1235
+		},
+		"colorID": 0
+	},
+	{
+		"title": "TRANSITION",
+		"tags": "transition",
+		"body": "What other topics would you like to address? OR Would you like to see a summary? [[interruption|interruption]]\n[[friendliness|friendly]]\n[[turn-taking|turn-taking]]\n[[sentiment|sentiment]]",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Interruption",
+		"tags": "interruption",
+		"body": "Looks like you interrupted others 15 times [SHOW INTERRUPTION CHARTs]? \n And I estimate you were interrupted by others 56 times[[huh|BLAH]]",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "friendly",
+		"tags": "",
+		"body": "Let's see how much you smiled\nYou ",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "sentiment",
+		"tags": "",
+		"body": "How do you think the group call went? [SHOW SENTIMENT OPTIONS] --> Prefer to use wit and generate responses\n[[Everyone seemed bored|bored]]\n[[We were happy campers|happy-sentiment]]",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "bored",
+		"tags": "sentiment",
+		"body": "Let's look at the chart. [SHOW SENTIMENT CHART] Mmm you're right, the engagement score is a bit low.\n[[blah|blah]]",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "happy-sentiment",
+		"tags": "sentiment",
+		"body": "How do you think the group call went? [SHOW SENTIMENT OPTIONS] --> Prefer to use wit and generate responses\n[[Everyone seemed bored|bored]]\n[[We were happy campers|happy-sentiment]]",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "turn-taking",
+		"tags": "turn",
+		"body": " ",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	},
+	{
+		"title": "blah",
+		"tags": "turn",
+		"body": "MOre dialogue to come",
+		"position": {
+			"x": -340,
+			"y": 1500
+		},
+		"colorID": 0
+	}
+]
