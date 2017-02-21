@@ -1,12 +1,15 @@
-/**************/
-/*** CONFIG ***/
-/**************/
+/**********************************************************************************/
+/* Original Source: https://github.com/anoek/webrtc-group-chat-example            */
+/*                                                                                */
+/* Modifications - CoCo Team, University of Rochester                             */
+/*                                                                                */
+/**********************************************************************************/
+
+/************************************/
+/* Signaling Server Setup           */
+/************************************/
 var PORT = 9000;
 
-
-/*************/
-/*** SETUP ***/
-/*************/
 var fs = require('fs');
 var uuid = require('node-uuid');
 
@@ -31,7 +34,6 @@ server.listen(PORT, null, function()
     console.log("Listening on port " + PORT);
 });
 
-//main.use(express.bodyParser());
 main.use(bodyParser.urlencoded({ extended: false }));
 main.use(bodyParser.json());
 
@@ -45,10 +47,10 @@ var sockets = {};
 var sessionKey = uuid.v1();
 
 var connectedUsers = 0;
-var requiredUsercount = 2;
-var sessionStarted = false;
+var requiredUserCount = 2;
 
-var uploads_finished = 0;
+var sessionStarted = false;
+var uploadsFinishedCount = 0;
 
 /**
  * Users will connect to the signaling server, after which they'll issue a "join"
@@ -107,26 +109,27 @@ io.sockets.on('connection', function (socket)
         channels[channel][socket.id] = socket;
         socket.channels[channel] = channel;
 		
+		//=================================================================================================
+		// CoCo Join Scripting
+		//=================================================================================================
+		
+		//tells this client the current session ID
+		socket.emit('session_key', sessionKey);		
+		
 		connectedUsers = connectedUsers + 1;
 		
-		// If we've filled up all the seats and haven't started
-		// the session, start the session.
-		/*
-		if(seatLocation == (requiredUsercount - 1) && !sessionStarted)
+		// If we've got our users we're all set to start recording data
+		if((connectedUsers == requiredUserCount) && !sessionStarted)
 		{
-			// Slight delay prior to running this.
+			// Slight delay prior to running this to allow the last user to properly resolve the connection.
 			setTimeout(function ()
 			{
 				for(id in channels[channel])
-				{
-				client.broadcast.to(client.roomName).emit('session_start','start');
-				client.emit('session_start','start');
+					channels[channel][id].emit('session_start','start');
 				sessionStarted = true;
-				}
 			},
 			3000);
 		}
-		*/
     });
 
     function part(channel) 
@@ -171,4 +174,33 @@ io.sockets.on('connection', function (socket)
             sockets[peer_id].emit('sessionDescription', {'peer_id': socket.id, 'session_description': session_description});
         }
     });
+	
+	//=====================================================================================================================
+	// CoCo Experiment Socket Handlers
+	//=====================================================================================================================
+	
+	// One client has hit the 'End Call' button, let everybody in this channel know
+	socket.on('propose_stop', function(data)
+	{
+		if(sessionStarted)
+		{
+			for(id in channels[data])
+				channels[data][id].emit('session_end','end');				
+			
+			sessionStarted = false;
+		}
+	});
+	
+	// Each client will tell the server when it has finished uploading video
+	socket.on('upload_finished', function(data)
+	{
+		uploadsFinishedCount = uploadsFinishedCount + 1;
+		
+		if(uploadsFinishedCount == requiredUserCount)
+		{
+			// This client is the last to finish uploading,
+			// so we'll delegate them to make the shell API call.
+			client.emit('shell_delegate','tell the API to do the thing!');
+		}
+	});
 });
