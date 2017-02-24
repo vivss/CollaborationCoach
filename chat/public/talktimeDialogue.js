@@ -3,7 +3,7 @@ var json =
     {
         "title": "intro_1",
         "tags": "",
-        "body": "Hi, I'm Roboto, your personal feedback assistant!\\nI've analyzed your performance of the previous session. Let's walk through it, shall we?\n[[Sure, let's do this!|into_2]]",
+        "body": "Hi, I'm Roboto, your personal feedback assistant!\\nI've analyzed your performance of the previous session. Let's walk through it, shall we?\n[[Sure, let's do this!|intro_2]]",
         "position": {
             "x": 27,
             "y": 96

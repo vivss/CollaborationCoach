@@ -124,7 +124,7 @@ function fixNewline(obj){
 	countdelay = dialoguecount+1.7;
 
 	console.log('whats the count ', count);
-	if(obj.buttons[0]=='optionbubble'){
+	if(obj.buttons[0]=='[[optionbubble]]'){
 		console.log('i have all options!')
 	}
 	else if(obj.buttons){
