@@ -33,7 +33,7 @@ var json =
     {
         "title": "participation_2",
         "tags": "1",
-        "body": "\n[[Sure|participation_4]]\n[[No Thanks|overlap_1]]",
+        "body": "\n[[Sure|participation_4]]\n[[No Thanks|intro_3]]",
         "position": {
             "x": 572,
             "y": 99
@@ -43,10 +43,20 @@ var json =
     {
         "title": "participation_4",
         "tags": "",
-        "body": "Team management experts have found that, equal participation is healthy for a group.\\nSpeaking about your own opinion can make the discussion stronger, whereas listening to teammates' viewpoints can remove your confusions.\\nRemember, balance is the key!\n[[Seems useful|overlap_1]]",
+        "body": "Team management experts have found that, equal participation is healthy for a group.\\nSpeaking about your own opinion can make the discussion stronger, whereas listening to teammates' viewpoints can remove your confusions.\\nRemember, balance is the key!\n[[Seems useful|intro_3]]",
         "position": {
             "x": 839,
             "y": 99
+        },
+        "colorID": 0
+    },
+    {
+        "title": "intro_3",
+        "tags": "",
+        "body": "Please choose an option from the feedback list on the right to begin with.\n[[optionbubble]]",
+        "position": {
+            "x": 27,
+            "y": 96
         },
         "colorID": 0
     },

@@ -124,20 +124,28 @@ function fixNewline(obj){
 	countdelay = dialoguecount+1.7;
 
 	console.log('whats the count ', count);
-	if(obj.buttons[0]=='[[optionbubble]]'){
-		console.log('i have all options!')
-	}
-	else if(obj.buttons){
+	
+	if(obj.buttons){
 		if((dialoguecount == 1 && thinkingflag == 0) || (dialoguecount == 0 && thinkingflag == 0))
 			countdelay+=5;
 		if(dialoguecount == 0 && thinkingflag == 1)
 			countdelay+=1.7;
 		(function(str){
 			setTimeout(function(){
-				for(var b of obj.buttons){
-					console.log(b);
-					$('#message-option').append(new option(/\[\[(.*?)\]\]/g.exec(b.trim())[1]).create());
-				}	
+				if(obj.buttons[0]=='[[optionbubble]]'){
+					console.log('i have all options!')
+					for(graphtype of graphType) {
+						console.log('there are', graphtype+'|'+graphtype+'_1')
+						$('#message-option').append(new option(graphtype+'|'+graphtype+'_1').create()) 
+						console.log('option1')
+					}
+				}else{
+					for(var b of obj.buttons){
+						console.log(b);
+						$('#message-option').append(new option(/\[\[(.*?)\]\]/g.exec(b.trim())[1]).create());
+					}
+				}
+					
 			},(countdelay)*1000);
 		})(str);//IIFE call on creating buttons
 	}
