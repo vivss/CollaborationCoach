@@ -198,7 +198,8 @@ span.content {
   opacity: 1;
 }
 
-.message-option {
+/** previous buttons **/
+/*.message-option {
   width: 90%;
   padding: 30px;
   display: flex;
@@ -217,8 +218,44 @@ span.content {
   border-radius: 6px 6px 6px 6px;
   background: #2ba2db;
   padding: 15px;
+}*/
+
+/** current buttons **/
+.message-option {
+  width: 90%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  position: fixed; 
+  justify-content: space-between;
+  bottom: 1.375rem; 
+  width: inherit; 
 }
 
+.message-option > button::before {
+  content: "> "
+}
+
+.message-option > button {
+  flex: 1 0 auto;
+  margin: 5px 5px;
+  color: #2ba2db!important;
+  font-weight: 700;
+  border: 1px solid #2ba2db;
+  border-right: 5px solid #2ba2db;
+  border-radius: 6px;
+  background: white;
+  text-align: left;
+  padding-left: 80%;
+}
+
+.message-option > button:hover {
+/*   border: 1px solid black; */
+  border-right: 5px solid black;
+  color: black!important;
+}
+
+/** All options buttons **/
 .message-option2 {
     position: fixed;
     width: 30%;
