@@ -19,7 +19,7 @@ var graphType = ["participation", "interruption", "turntaking", "valence", "atti
 
 //equal to document.ready
 function load() {
-	console.log('im in onload', json, thinkingflag, defaultfeedback, defaultuser, session);
+	console.log('im in onloaddddd', json, thinkingflag, defaultfeedback, defaultuser, session);
 	//**we will alter the below line so it does not start from the first
 	gotoObject(participation[Object.keys(participation)[0]]); //start from the initial item on the list
 	gatherData();
@@ -36,6 +36,7 @@ function gotoObject(object){
 	"You shared most smiles with <span class='dynotext'>" + shareMost + "</span>, and least with <span class='dynotext'>" + shareLeast + "</span>."];
 	//On average, the team was emotionally" + allEmo + "."
 	document.getElementById('message-option').innerHTML="";
+	document.getElementById('message-option2').innerHTML="";
 	
 	// console.log(participation, object.title);
 
@@ -131,22 +132,27 @@ function fixNewline(obj){
 		if(dialoguecount == 0 && thinkingflag == 1)
 			countdelay+=1.7;
 		(function(str){
-			setTimeout(function(){
-				if(obj.buttons[0]=='[[optionbubble]]'){
+			
+			if(obj.buttons[0]=='[[optionbubble]]'){
+				setTimeout(function(){
 					console.log('i have all options!')
 					for(graphtype of graphType) {
-						console.log('there are', graphtype+'|'+graphtype+'_1')
-						$('#message-option').append(new option(graphtype+'|'+graphtype+'_1').create()) 
+						var newoption = graphtype+'|'+graphtype+'_1'
+						$('#message-option2').append(new option(newoption).create()) 
 						console.log('option1')
 					}
-				}else{
+				},1000)
+				
+			}else{
+				setTimeout(function(){
+				
 					for(var b of obj.buttons){
 						console.log(b);
 						$('#message-option').append(new option(/\[\[(.*?)\]\]/g.exec(b.trim())[1]).create());
 					}
-				}
-					
-			},(countdelay)*1000);
+				},(countdelay)*1000);
+			}
+			
 		})(str);//IIFE call on creating buttons
 	}
 

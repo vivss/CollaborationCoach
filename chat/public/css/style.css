@@ -78,8 +78,8 @@ h5.graph-header
   width: 40%;
   /*margin-top: 65px;*/
   overflow: auto;
-  border-left: #2ba2db;
-  border-style: inset;
+  /*border-left: #2ba2db;*/
+  /*border-style: inset;*/
 }
 
 .contain-filter {
@@ -218,6 +218,26 @@ span.content {
   background: #2ba2db;
   padding: 15px;
 }
+
+.message-option2 {
+    position: fixed;
+    width: 30%;
+    padding-top: 10px;
+}
+
+.message-option2 > button {
+  width: 35%;
+  margin: 5px;
+  border: none;
+  color: white;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  background: #2ba2db;
+}
+
 
 .container-layer {
   width: 95%;

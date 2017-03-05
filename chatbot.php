@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body> 
 	<header>
 		<nav class="navbar navbar-dark">
       		<div class="container-fluid">
@@ -49,7 +49,10 @@
 			<div class="contain-graph">
 				<div class="container-layer">
 					<!-- actual feedback diagram -->
-					<div id="graphContainer" class="inner-contain-graph">
+					<div id="graphContainer" 
+					class="inner-contain-graph">
+					<div id="message-option2" class="message-option2">
+		  		</div>
 						<!-- some kind of navigation instruction -->
  
 			 		<div id="accordion">
